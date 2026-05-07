@@ -12,8 +12,8 @@ const SocialIcon = ({ icon }) => (
 const ProfileCard = () => {
   return (
     <div 
-      className="sticky top-[100px] glass-card rounded-[40px] flex flex-col items-center shadow-2xl overflow-hidden"
-      style={{ width: '500px', height: '750px', background: '#1a1a1a' }}
+      className="relative glass-card rounded-[40px] flex flex-col items-center shadow-2xl overflow-hidden w-full max-w-[500px] min-h-[750px]"
+      style={{ background: '#1a1a1a' }}
     >
       {/* Image Container */}
       <div className="w-[90%] mt-6 aspect-[4/4.5] bg-[#e5e5e5] rounded-[30px] overflow-hidden relative border border-white/5">

@@ -25,41 +25,53 @@ function App() {
       {/* Background Layer */}
       <div className="concrete-bg" />
 
-      {/* Sidebar Nav */}
-      <div className="fixed left-6 top-[100px] flex flex-col gap-6 z-50">
-        {/* Logo */}
-        <div className="w-[84px] h-[84px] bg-[#1a1a1a] rounded-full flex items-center justify-center border border-white/5 shadow-xl cursor-pointer hover:bg-white/5 transition-all">
-          <img src={logoIcon} alt="Logo" className="w-12 h-12" />
-        </div>
+      {/* Main Container - Fixed height on desktop, natural on mobile */}
+      <div className="w-full lg:h-screen lg:overflow-hidden flex justify-center">
+        <div className="flex flex-col lg:flex-row items-start gap-6 max-w-[1500px] w-full px-4 lg:px-8">
+          
+          {/* Left Section - Fixed/Sticky on the left */}
+          <div className="flex-shrink-0 flex flex-col md:flex-row lg:flex-col xl:flex-row items-center lg:items-start gap-6 w-full lg:w-auto py-8 lg:py-12">
+            
+            {/* Sidebar Navigation */}
+            <nav className="flex md:flex-col items-center gap-4 xl:gap-6 z-50 w-full md:w-auto overflow-x-auto no-scrollbar md:overflow-visible py-2 md:py-0 justify-center">
+              {/* Logo */}
+              <div className="w-14 h-14 xl:w-[84px] xl:h-[84px] bg-[#1a1a1a] rounded-full flex-shrink-0 flex items-center justify-center border border-white/5 shadow-xl cursor-pointer hover:bg-white/5 transition-all">
+                <img src={logoIcon} alt="Logo" className="w-8 h-8 xl:w-12 xl:h-12" />
+              </div>
 
-        {/* Theme Toggle */}
-        <div className="w-[84px] h-[84px] bg-[#1a1a1a] rounded-full flex items-center justify-center border border-white/5 shadow-xl cursor-pointer hover:bg-white/5 transition-all">
-          <img src={sunIcon} alt="Theme" className="w-8 h-8" />
-        </div>
+              {/* Navigation Group */}
+              <div className="flex md:flex-col bg-[#1a1a1a] rounded-full xl:rounded-[50px] p-1.5 xl:p-2 gap-1.5 xl:gap-2 border border-white/10 shadow-2xl">
+                {navIcons.map((icon, index) => (
+                  <div 
+                    key={index} 
+                    className="w-12 h-12 xl:w-[68px] xl:h-[68px] rounded-full flex-shrink-0 flex items-center justify-center hover:bg-white/10 transition-all cursor-pointer group"
+                  >
+                    <img 
+                      src={icon.src} 
+                      alt={icon.alt} 
+                      className="w-8 h-8 xl:w-14 xl:h-14 group-hover:scale-110 transition-transform object-contain" 
+                    />
+                  </div>
+                ))}
+              </div>
 
-        {/* Navigation Group */}
-        <div className="bg-[#1a1a1a] rounded-[50px] p-2 flex flex-col gap-2 border border-white/10 shadow-2xl">
-          {navIcons.map((icon, index) => (
-            <div 
-              key={index} 
-              className="w-[68px] h-[68px] rounded-full flex items-center justify-center hover:bg-white/10 transition-all cursor-pointer group"
-            >
-              <img 
-                src={icon.src} 
-                alt={icon.alt} 
-                className="w-14 h-14 group-hover:scale-110 transition-transform object-contain" 
-              />
+              {/* Theme Toggle */}
+              <div className="w-14 h-14 xl:w-[84px] xl:h-[84px] bg-[#1a1a1a] rounded-full flex-shrink-0 flex items-center justify-center border border-white/5 shadow-xl cursor-pointer hover:bg-white/5 transition-all">
+                <img src={sunIcon} alt="Theme" className="w-6 h-6 xl:w-8 xl:h-8" />
+              </div>
+            </nav>
+
+            {/* Profile Card */}
+            <div className="w-full md:w-auto flex justify-center">
+              <ProfileCard />
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* Main content centered */}
-      <div className="w-full flex justify-center">
-        <main className="relative flex pt-[100px] gap-[25px] pb-24 px-[50px]">
-          <ProfileCard />
-          <HeroContent />
-        </main>
+          {/* Scrolling Right Section - Independent scroll on desktop */}
+          <main className="w-full lg:flex-1 lg:h-full lg:overflow-y-auto no-scrollbar py-8 lg:py-12">
+            <HeroContent />
+          </main>
+        </div>
       </div>
 
     </div>

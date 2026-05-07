@@ -137,9 +137,8 @@ const WorksSection = () => {
   return (
     <>
       <div 
-        className="glass-card rounded-[40px] p-12 space-y-12 shadow-2xl border-white/5" 
+        className="glass-card rounded-[40px] p-6 md:p-12 space-y-12 shadow-2xl border-white/5 w-full" 
         style={{ 
-          width: '855px',
           background: 'linear-gradient(125.04deg, #121212 0%, #222222 100%)'
         }}
       >
@@ -151,7 +150,7 @@ const WorksSection = () => {
         </div>
       </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 md:gap-x-8 gap-y-8 md:gap-y-12">
           {projects.map((project, index) => (
             <ProjectCarousel 
               key={index} 

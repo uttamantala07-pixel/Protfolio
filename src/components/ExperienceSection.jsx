@@ -84,9 +84,8 @@ const ExperienceSection = () => {
 
   return (
     <div 
-      className="glass-card rounded-[40px] p-12 space-y-10 shadow-2xl border-white/5 overflow-hidden" 
+      className="glass-card rounded-[40px] p-6 md:p-12 space-y-10 shadow-2xl border-white/5 overflow-hidden w-full" 
       style={{ 
-        width: '855px',
         background: 'linear-gradient(125.04deg, #121212 0%, #222222 100%)'
       }}
     >
@@ -98,7 +97,7 @@ const ExperienceSection = () => {
         </div>
       </div>
 
-      <h2 className="text-4xl font-bold text-white">Work Experience</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-white">Work Experience</h2>
 
       <div className="relative pt-4">
         {/* Vertical Line */}

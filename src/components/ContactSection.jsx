@@ -2,15 +2,15 @@ import React from 'react';
 import contactTagIcon from '../assets/uttam-assets/CONTACT.png';
 
 const ContactCard = ({ icon, label, value }) => (
-  <div className="glass-card rounded-[10px] p-6 flex items-center gap-6 border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
-    <div className="w-14 h-14 bg-[#1a1a1a] rounded-lg flex items-center justify-center border border-white/10 group">
+  <div className="glass-card rounded-[10px] p-4 md:p-6 flex flex-col sm:flex-row items-center sm:items-stretch gap-4 sm:gap-6 border-white/5 bg-white/[0.02] hover:bg-white/[0.05] transition-all duration-300">
+    <div className="w-14 h-14 bg-[#1a1a1a] rounded-lg flex-shrink-0 flex items-center justify-center border border-white/10 group">
       <div className="text-[#78CC6D]">
         {icon}
       </div>
     </div>
-    <div className="flex-1 flex flex-col justify-center border-l border-white/10 pl-6 h-full">
+    <div className="flex-1 flex flex-col justify-center border-t sm:border-t-0 sm:border-l border-white/10 pt-4 sm:pt-0 sm:pl-6 text-center sm:text-left">
       <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1">{label}</p>
-      <p className="text-lg font-medium text-white">{value}</p>
+      <p className="text-base md:text-lg font-medium text-white break-all">{value}</p>
     </div>
   </div>
 );
@@ -48,9 +48,8 @@ const ContactSection = () => {
 
   return (
     <div 
-      className="glass-card rounded-[40px] p-12 space-y-12 shadow-2xl border-white/5" 
+      className="glass-card rounded-[40px] p-6 md:p-12 space-y-12 shadow-2xl border-white/5 w-full" 
       style={{ 
-        width: '855px',
         background: 'linear-gradient(125.04deg, #121212 0%, #222222 100%)'
       }}
     >
@@ -63,12 +62,12 @@ const ContactSection = () => {
       </div>
 
       <div className="space-y-8">
-        <h2 className="text-4xl font-medium text-white">Let's Get in Touch!</h2>
+        <h2 className="text-3xl md:text-4xl font-medium text-white">Let's Get in Touch!</h2>
         
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <ContactCard {...contactInfo[0]} />
           <ContactCard {...contactInfo[1]} />
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <ContactCard {...contactInfo[2]} />
           </div>
         </div>

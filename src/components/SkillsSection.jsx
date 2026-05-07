@@ -72,7 +72,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <div className="glass-card rounded-[40px] p-12 space-y-12 shadow-2xl border-white/5" style={{ width: '855px' }}>
+    <div className="glass-card rounded-[40px] p-6 md:p-12 space-y-12 shadow-2xl border-white/5 w-full">
       {/* Header Tag */}
       <div className="flex">
         <div className="flex items-center gap-2 px-6 py-2 rounded-full border border-white/20 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-md">
@@ -82,8 +82,8 @@ const SkillsSection = () => {
       </div>
 
       <div className="space-y-8">
-        <h2 className="text-4xl font-bold text-white">Software Skills</h2>
-        <div className="grid grid-cols-2 gap-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-white">Software Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           {softwareSkills.map((skill, index) => (
             <SoftwareSkillCard key={index} {...skill} />
           ))}
@@ -93,8 +93,8 @@ const SkillsSection = () => {
       <div className="w-full h-px bg-white/5" />
 
       <div className="space-y-8">
-        <h2 className="text-4xl font-bold text-white">Additional Skills</h2>
-        <div className="grid grid-cols-2 gap-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white">Additional Skills</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* Languages */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-gray-400 text-xs font-bold uppercase tracking-widest mb-4">
